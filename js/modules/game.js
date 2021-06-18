@@ -67,7 +67,7 @@ const Game = ((_) => {
     hangman.innerHTML = elements;
   };
 
-  //! get a random word
+  //! generate a random word
   const chooseWord = (_) => {
     words.sort((a, b) => 0.5 - Math.random());
     return words[0];
@@ -76,6 +76,7 @@ const Game = ((_) => {
   const showLetters = (_) => {
     let markup = ``;
     letters.forEach((letter) => {
+      //gray the letter if its pushed to the guessedWord
       const isActive = alreadyPushed(letter) ? "hangman__letter--active" : "";
       markup += `
       <li class="hangman__letter ${isActive}">${letter}</li>
