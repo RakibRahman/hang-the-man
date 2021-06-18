@@ -21,7 +21,7 @@ body {
 }
 
 .hangman__stats {
-  color: lightyellow;
+  color: #f3a82f;
   font-family: Arial, Helvetica, sans-serif;
 }
 

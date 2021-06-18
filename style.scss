@@ -26,7 +26,7 @@ body {
   background-color: $main-bg-color;
 }
 .hangman__stats {
-  color: lightyellow;
+  color: $light-yellow;
   font-family: $font-body-stack;
 }
 .hangman__title {
