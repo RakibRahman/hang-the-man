@@ -1,6 +1,10 @@
 import { sound } from "../data/sound.js";
 import Menu from "./menu.js";
+import Gameover from "./gameover.js";
 const Game = ((_) => {
+  console.log("ok");
+  // Gameover.copy();
+
   const letters = [
     "a",
     "b",
@@ -126,10 +130,18 @@ const Game = ((_) => {
   const isGameOver = (_) => {
     //if players wins
     if (playerWon()) {
-      setTimeout(() => alert("You Win"), 500);
+      sound.win.play();
+      Gameover.setState({
+        correctWord: chosenWord,
+        result: "Win",
+      });
     }
     if (playerLose()) {
-      alert("Loser");
+      sound.lose.play();
+      Gameover.setState({
+        correctWord: chosenWord,
+        result: "Lose",
+      });
     }
   };
 
