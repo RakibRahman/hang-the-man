@@ -10,8 +10,8 @@ const Manual = ((_) => {
 
   const render = (_) => {
     let markup = `
-    <h1 class="hangman__title">How To Play</h1>
-    <ul class="how">
+    <h1 class="hangman__title animate__animated animate__backInLeft">How To Play</h1>
+    <ul class="how animate__animated animate__backInRight">
       <li><span>Playing</span> the game is pretty straightforward</li>
       <li>All you need to do is<span> guess</span> the correct letters to make a word</li>
       <li>You will have total <span>7</span> lives. </li>
@@ -20,7 +20,7 @@ const Manual = ((_) => {
       <li>So, try your best to<span> win!</span></li>
       <li><span>Good Luck</span></li>
     </ul>
-    <button class="home button hangman__trigger"> <img src="./../../img/icons8-home-64.png" alt=""> </button>
+    <button class="animate__animated home button hangman__trigger"> <img src="./../../img/icons8-home-64.png" alt="logo"> </button>
     `;
 
     hangman.innerHTML = markup;

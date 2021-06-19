@@ -14,7 +14,8 @@ const Gameover = ((_) => {
     markup = `
         <h1 class="hangman__title">GAME OVER</h1>
         <p class="result">
-        You ${state.winOrLose.toUpperCase()}!
+        YOU ${state.winOrLose.toUpperCase()}!
+        <br>
         <br>
      The Word is 🥢 ${state.correctWord.toUpperCase()}
 

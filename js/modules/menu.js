@@ -10,9 +10,9 @@ const Menu = ((_) => {
   const render = (_) => {
     let markup = "";
     markup += `
-      <h1 class="hangman__title">Hangman</h1>
-      <button class='button start'>New Game</button>
-      <button class='button instructions'>How To Play</button>
+      <h1 class="hangman__title animate__animated animate__shakeY">hang<img src="./../../img/icons8-hang-30.png" alt="logo">man</h1>
+      <button class='animate__animated button start'>New Game</button>
+      <button class='animate__animated button instructions'>How To Play</button>
     
     `;
     hangman.innerHTML = markup;

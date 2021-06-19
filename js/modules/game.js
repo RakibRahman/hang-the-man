@@ -54,15 +54,16 @@ const Game = ((_) => {
   const showGameScreen = (_) => {
     let elements = "";
     elements = `
-    <p class="hangman__stats">Lives: <span class="hangman__lives">${lives}</span> </p>
-    <h1 class="hangman__title">hangman</h1> 
+    <p class="hangman__stats animate__animated animate__pulse">Lives: <span class="hangman__lives">${lives}</span> </p>
+    <h1 class="hangman__title animate__animated animate__headShake">hang<img src="./../../img/icons8-hang-30.png" alt="logo">man</h1> 
     <canvas class="hangman__board" height="155px"></canvas>
     <div class="hangman__word">${guessedWord.join("")}</div>
     <p class="hangman__instructions">Select letters to guess the correct word. </p>
     <ul class="hangman__letters">
     ${showLetters()}
     </ul>
-    <button class="hangman__trigger button">Main Menu</button>
+    <button class="hangman__trigger button animate__animated"> Main Menu </button>
+   
     `;
     hangman.innerHTML = elements;
   };
@@ -93,7 +94,7 @@ const Game = ((_) => {
       }
       // get data from li tag
       if (e.target.matches(".hangman__letter")) {
-        sound.click.play();
+        sound.kb.play();
         check(e.target.innerText.toLowerCase());
       }
     });
@@ -132,18 +133,22 @@ const Game = ((_) => {
   const isGameOver = (_) => {
     //if players wins
     if (playerWon()) {
-      sound.win.play();
-      Gameover.setState({
-        correctWord: chosenWord,
-        result: "Win",
-      });
+      setTimeout(() => {
+        sound.win.play();
+        Gameover.setState({
+          correctWord: chosenWord,
+          result: "Saved the day",
+        });
+      }, 500);
     }
     if (playerLose()) {
-      sound.lose.play();
-      Gameover.setState({
-        correctWord: chosenWord,
-        result: "Lose",
-      });
+      setTimeout(() => {
+        sound.lose.play();
+        Gameover.setState({
+          correctWord: chosenWord,
+          result: "Lose",
+        });
+      }, 500);
     }
   };
 
