@@ -17,6 +17,7 @@ const Manual = ((_) => {
       <li>You will have total <span>7</span> lives. </li>
       <li>Lives will <span>decrease</span> each time you guess the wrong word</li>
       <li>If you <span>lose</span>,your character will be <span>hanged</span></li>
+      <li>when got really stuck, use the <span>hint</span> </li>
       <li>So, try your best to<span> win!</span></li>
       <li><span>Good Luck</span></li>
     </ul>
