@@ -1,10 +1,8 @@
 import { sound } from "../data/sound.js";
 import Menu from "./menu.js";
 import Gameover from "./gameover.js";
+import Canvas from "./canvas.js";
 const Game = ((_) => {
-  console.log("ok");
-  // Gameover.copy();
-
   const letters = [
     "a",
     "b",
@@ -41,13 +39,15 @@ const Game = ((_) => {
 
   const hangman = document.querySelector(".hangman");
 
+  //! Start The Game
   const init = (_) => {
     chosenWord = chooseWord();
     guessedWord = Array(chosenWord.length).fill("_");
     guesses = [];
-    lives = 6;
+    lives = 7;
     showGameScreen();
     listeners();
+    Canvas.init();
   };
 
   //! Generate Game Screen
@@ -111,6 +111,7 @@ const Game = ((_) => {
       updateWord(guess);
     } else {
       lives--; // decrease lives if false
+      Canvas.setLife(lives);
     }
     render();
     isGameOver();
