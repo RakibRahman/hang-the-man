@@ -31,7 +31,15 @@ const Game = ((_) => {
     "y",
     "z",
   ];
-  const words = ["mango", "ball", "cat", "parrot"];
+  const words = [
+    "mango",
+    "ball",
+    "cat",
+    "parrot",
+    "javascript",
+    "node",
+    "front",
+  ];
   let chosenWord;
   let guessedWord;
   let lives;
@@ -55,6 +63,7 @@ const Game = ((_) => {
     let elements = "";
     elements = `
     <p class="hangman__stats animate__animated animate__pulse">Lives: <span class="hangman__lives">${lives}</span> </p>
+    <div> <button class="hangman__hint">Hint?</button> <p class="hangman__puzzle">${generateHint()}</p> </div>
     <h1 class="hangman__title animate__animated animate__headShake">hang<img src="./../../img/icons8-hang-30.png" alt="logo">man</h1> 
     <canvas class="hangman__board" height="155px"></canvas>
     <div class="hangman__word">${guessedWord.join("")}</div>
@@ -72,6 +81,14 @@ const Game = ((_) => {
   const chooseWord = (_) => {
     words.sort((a, b) => 0.5 - Math.random());
     return words[0];
+  };
+  const generateHint = (_) => {
+    const word = chosenWord;
+    let random = Math.floor(Math.random() * word.length);
+    let change1 = word[random];
+    let change2 = word[word.length - 1];
+    let res = word.replace(change1, "_");
+    return res.replace(change2, "_");
   };
   //! show letters
   const showLetters = (_) => {
@@ -96,6 +113,20 @@ const Game = ((_) => {
       if (e.target.matches(".hangman__letter")) {
         sound.kb.play();
         check(e.target.innerText.toLowerCase());
+      }
+    });
+    const hintBtn = document.querySelector(".hangman__hint");
+    const hintWord = document.querySelector(".hangman__puzzle");
+    hintWord.style.display = "none";
+    hintBtn.addEventListener("click", (_) => {
+      hintBtn.innerText = "Hint:";
+      hintWord.style.display = "inline-block";
+
+      if ((hintWord.style.display = "inline-block")) {
+        setTimeout(() => {
+          hintBtn.innerText = "Hint?";
+          hintWord.style.display = "none";
+        }, 2000);
       }
     });
   };
