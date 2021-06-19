@@ -14,14 +14,43 @@ $font-heading-stack: Impact, Charcoal, sans-serif;
 }
 body {
   background-color: #ffffff;
-  background-image: url(./../img/bg.jpg);
+  background: linear-gradient(
+    -45deg,
+    #bdc3c7,
+    #2c3e50,
+    #c33764,
+    #1d2671,
+    #141e30,
+    #6dd5ed
+  );
+  background-size: 400% 400%;
+  animation: backgroundChange 15s ease infinite;
 }
+@keyframes backgroundChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .container {
   max-width: $container-width;
   margin: 2rem auto;
-  border: 5px solid $light-yellow;
-  border-radius: 10px;
-  overflow: hidden;
+  // border: 5px solid $light-yellow;
+  border-style: solid;
+  border: 5px solid;
+  border-image: linear-gradient(
+      to right,
+      rgb(18, 194, 233),
+      rgb(196, 113, 237),
+      rgb(246, 79, 89)
+    )
+    1;
 }
 .hangman {
   padding: 20px;
