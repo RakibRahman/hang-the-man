@@ -33,6 +33,7 @@ body {
 .hangman__stats {
   color: $light-yellow;
   font-family: $font-body-stack;
+  font-size: 18px;
 }
 .hangman__title {
   font-family: $font-heading-stack;
@@ -138,4 +139,21 @@ body {
   font-size: 1.2rem;
   color: $light-white;
   text-align: center;
+}
+
+.hangman__hint {
+  margin-top: 5px;
+  background: transparent;
+  outline: none;
+  border: 0;
+  font-size: 16px;
+  color: $main-font-color;
+  cursor: pointer;
+}
+.hangman__puzzle {
+  display: inline-block;
+  color: $light-yellow;
+  padding: 2px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
 }
