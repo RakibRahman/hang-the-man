@@ -19,11 +19,16 @@ body {
 .container {
   max-width: $container-width;
   margin: 2rem auto;
+  border: 5px solid $light-yellow;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .hangman {
   padding: 20px;
   height: 680px;
   background-color: $main-bg-color;
+  display: grid;
+  place-content: center;
 }
 .hangman__stats {
   color: $light-yellow;
@@ -38,6 +43,7 @@ body {
 }
 .hangman__board {
   border: 2px dashed white;
+  padding: 2px;
   display: block;
   margin: 0 auto;
 }
@@ -86,25 +92,41 @@ body {
   font-size: 1.4rem;
   padding: 0.8rem 1.2rem;
   background: $light-yellow;
-
+  cursor: pointer;
   border: 0;
   font-weight: bold;
   color: $light-black;
+  border-radius: 5px;
 }
 .button:focus {
   outline: 0;
   box-shadow: 0 0 10px rgb(255, 170, 0);
 }
-
-/* instructions screen */
+.home {
+  width: 70px;
+  height: 40px;
+  display: grid;
+  place-content: center;
+}
+.home img {
+  width: 100%;
+  height: auto;
+}
+/* How to play screen */
 .how {
   line-height: 1.7;
   padding: 1rem 1.8rem;
   font-family: $font-body-stack;
   color: $light-white;
-  text-align: center;
+  text-align: left;
 }
-
+.how li::marker {
+  font-size: 25px;
+  color: green;
+}
+.how li span {
+  color: $light-yellow;
+}
 /* end screen */
 .result {
   padding: 1rem 0;
